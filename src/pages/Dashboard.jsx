@@ -15,34 +15,52 @@ function Dashboard() {
 
   const deleteSession = async (id) => {
     await fetch(`http://localhost:3000/sessions/${id}`, {
-      method: "DELETE"
+      method: "DELETE",
     });
 
-    loadSessions(); // refresh after delete
+    loadSessions();
   };
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Dashboard</h1>
+    <div style={{ padding: "30px" }}>
+      <h1>Athlete Dashboard</h1>
 
-      {sessions.map((s) => (
-        <div
-          key={s.id}
-          style={{
-            border: "1px solid #ccc",
-            margin: "10px",
-            padding: "10px",
-            borderRadius: "8px"
-          }}
-        >
-          <h3>{s.workout}</h3>
-          <p>{s.duration} mins</p>
+      <div style={{ maxWidth: "800px", margin: "30px auto" }}>
+        {sessions.map((session) => (
+          <div
+            key={session.id}
+            style={{
+              backgroundColor: "white",
+              borderLeft: "6px solid #1E3A8A",
+              borderRadius: "12px",
+              padding: "22px",
+              marginBottom: "20px",
+              boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+            }}
+          >
+            <h2 style={{ color: "#1E3A8A" }}>{session.workout}</h2>
 
-          <button onClick={() => deleteSession(s.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+            <p><strong>Date:</strong> {session.date}</p>
+            <p><strong>Duration:</strong> {session.duration} minutes</p>
+            <p><strong>Performance Score:</strong> {session.score}/10</p>
+
+            <button
+              onClick={() => deleteSession(session.id)}
+              style={{
+                backgroundColor: "#DC2626",
+                color: "white",
+                border: "none",
+                padding: "10px 14px",
+                borderRadius: "8px",
+                cursor: "pointer",
+                marginTop: "10px",
+              }}
+            >
+              Delete Session
+            </button>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
