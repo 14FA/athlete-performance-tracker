@@ -1,16 +1,140 @@
-# React + Vite
+# Athlete Performance Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+The Athlete Performance Tracker is a full-stack web application designed to help athletes record and monitor their workout sessions. Users can add workouts, track their performance, edit existing sessions, delete sessions, and view training statistics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project was developed using React for the frontend, Express for the backend, and SQLite for persistent data storage.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+- Add new workout sessions
+- View all workout sessions
+- Edit existing workout sessions
+- Delete workout sessions
+- Track workout duration
+- Record performance scores
+- Record workout dates
+- View workout statistics
+- Persistent data storage using SQLite
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+## Technologies Used
+
+### Frontend
+- React
+- React Router
+- JavaScript
+- CSS
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- SQLite
+
+---
+
+## CRUD Operations
+
+This project implements all four CRUD operations:
+
+- **Create** – Add a new workout session
+- **Read** – Display all workout sessions
+- **Update** – Edit an existing workout session
+- **Delete** – Remove a workout session
+
+All CRUD operations interact with the SQLite database.
+
+---
+
+## Project Pages
+
+- Home
+- Dashboard
+- Add Session
+- Stats
+- Goals
+- Profile
+
+---
+
+## How to Run the Project
+
+### Install dependencies
+
+Frontend:
+
+```bash
+npm install
+```
+
+Backend:
+
+```bash
+cd server
+npm install
+```
+
+### Start the backend
+
+```bash
+cd server
+node server.js
+```
+
+### Start the frontend
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```
+http://localhost:5173
+```
+
+---
+
+## Database
+
+The application uses a SQLite database named:
+
+```
+sessions.db
+```
+
+The database stores workout sessions with:
+
+- ID
+- Workout Name
+- Duration
+- Performance Score
+- Date
+
+---
+
+## Future Improvements
+
+- User authentication
+- Goal progress tracking
+- Charts and graphs
+- Workout filtering and searching
+- Mobile-friendly responsive design
+
+---
+
+## Author
+
+**Favour Anyaele**
+
+Stetson University
+
+Summer 2026
+
+CINF 301 – Web Application Development
